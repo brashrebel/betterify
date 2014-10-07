@@ -19,6 +19,25 @@ class Betterify {
 		add_action( 'wp_footer', array( $this, 'powerify' ) );
 	}
 
+    /**
+     * Now we shall fix anything that is broken
+     *
+     * @return string
+     */
+	public function fix() {
+		if ( function_exists( magically_fix_all_the_things() ) ) {
+			return 'Everything is fixed';
+		} else {
+			// It is all broken
+			$broken_stuff = 'broken';
+			// Not any more!
+			$broken_stuff = 'not broken!';
+		}
+	}
+
+	/**
+	 * At this point, we are making WordPress MOAR POWERFUL!
+	 */
 	public function powerify() {
 		$this->power = 0;
 		// MOAR POWER!
@@ -27,10 +46,20 @@ class Betterify {
 		echo '<!-- THE POWER IS NOW ' . $power . '! -->';
 	}
 
+	/**
+	 * Let's talk SEO!!!
+	 *
+	 * @return string
+	 */
 	public function googly() {
 		return '???????';
 	}
 
+	/**
+	 * Now let's optimize!
+	 *
+	 * @return string
+	 */
 	public function optimizify() {
 		if ( $this->seo != $this->googly() ) {
 			return 'You shall rank!';
@@ -39,4 +68,5 @@ class Betterify {
 		}
 	}
 }
+
 $betterify = new Betterify();
