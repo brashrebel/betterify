@@ -12,44 +12,47 @@ License: GPL2
 
 class Betterify {
 
-    /**
-     * Declare a few properties...
-     *
-     * @var
-     */
+	/**
+	 * Declare a few properties...
+	 *
+	 * @var
+	 */
 	public $power;
 	public $seo;
+	public $errors;
 
-    /**
-     * Implement our betterifying functionality
-     */
+	/**
+	 * Implement our betterifying functionality
+	 */
 	public function __construct() {
+		add_action( 'init', array( $this, 'errors' ) );
 		add_action( 'wp_footer', array( $this, 'powerify' ) );
 		add_filter( 'the_title', array( $this, 'titles' ) );
 	}
 
-    /**
-     * Define awful...
-     */
-    public function is_awful() {
-        $awful = array(
-            'mushrooms',
-            'Twilight',
-            'Kid Rock',
-            'frost bite',
-            'reality television',
-            'papercuts',
-            'terrorists',
-        );
-    }
-    /**
-     * We can't have awful titles can we?
-     *
-     * @param $title
-     * @param null $id
-     *
-     * @return string
-     */
+	/**
+	 * Define awful...
+	 */
+	public function is_awful() {
+		$awful = array(
+			'mushrooms',
+			'Twilight',
+			'Kid Rock',
+			'frost bite',
+			'reality television',
+			'papercuts',
+			'terrorists',
+		);
+	}
+
+	/**
+	 * We can't have awful titles can we?
+	 *
+	 * @param $title
+	 * @param null $id
+	 *
+	 * @return string
+	 */
 	public function titles( $title, $id = null ) {
 		if ( function_exists( $this->is_awful() ) ) {
 			if ( $title == $this->is_awful() ) {
@@ -58,8 +61,8 @@ class Betterify {
 				return $title;
 			}
 		} else {
-            return $title;
-        }
+			return $title;
+		}
 	}
 
 	/**
@@ -120,6 +123,12 @@ class Betterify {
 			$conflicts = null;
 		} else {
 			return;
+		}
+	}
+
+	public function errors() {
+		if ( $this->errors ) {
+			$this->errors = null;
 		}
 	}
 }
