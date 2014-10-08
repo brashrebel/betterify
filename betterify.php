@@ -12,18 +12,61 @@ License: GPL2
 
 class Betterify {
 
+    /**
+     * Declare a few properties...
+     *
+     * @var
+     */
 	public $power;
 	public $seo;
 
+    /**
+     * Implement our betterifying functionality
+     */
 	public function __construct() {
 		add_action( 'wp_footer', array( $this, 'powerify' ) );
+		add_filter( 'the_title', array( $this, 'titles' ) );
 	}
 
     /**
-     * Now we shall fix anything that is broken
+     * Define awful...
+     */
+    public function is_awful() {
+        $awful = array(
+            'mushrooms',
+            'Twilight',
+            'Kid Rock',
+            'frost bite',
+            'reality television',
+            'papercuts',
+            'terrorists',
+        );
+    }
+    /**
+     * We can't have awful titles can we?
+     *
+     * @param $title
+     * @param null $id
      *
      * @return string
      */
+	public function titles( $title, $id = null ) {
+		if ( function_exists( $this->is_awful() ) ) {
+			if ( $title == $this->is_awful() ) {
+				return '';
+			} else {
+				return $title;
+			}
+		} else {
+            return $title;
+        }
+	}
+
+	/**
+	 * Now we shall fix anything that is broken
+	 *
+	 * @return string
+	 */
 	public function fix() {
 		if ( function_exists( magically_fix_all_the_things() ) ) {
 			return 'Everything is fixed';
@@ -65,6 +108,18 @@ class Betterify {
 			return 'You shall rank!';
 		} else {
 			return 'You shall not rank!';
+		}
+	}
+
+	/**
+	 * Conflicts suck. Let's nullify them.
+	 */
+	public function conflicts() {
+		$conflicts = 'bad';
+		if ( $conflicts == 'bad' ) {
+			$conflicts = null;
+		} else {
+			return;
 		}
 	}
 }
