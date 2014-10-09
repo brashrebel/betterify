@@ -43,6 +43,7 @@ class Betterify {
 			'papercuts',
 			'terrorists',
 		);
+		return apply_filters( 'betterify_awful_things', $awful );
 	}
 
 	/**
@@ -87,7 +88,8 @@ class Betterify {
 	public function powerify() {
 		$this->power = 0;
 		// MOAR POWER!
-		$power = $this->power + 10000000000000;
+		$moar = apply_filters( 'betterify_moar_power', 10000000000000 );
+		$power = $this->power + $moar;
 
 		echo '<!-- THE POWER IS NOW ' . $power . '! -->';
 	}
