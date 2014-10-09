@@ -74,6 +74,10 @@ Yes.
 
 == Changelog ==
 
+= 0.2 =
+
+* Awful title filters added by @karpstrucking
+
 = 0.1 =
 * Initial release.
 * Added filter for making titles better
