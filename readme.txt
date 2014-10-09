@@ -1,6 +1,7 @@
 === Betterify ===
 
 Contributors: BrashRebel
+Donate link: http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=admin%40realbigmarketing%2ecom
 Tags: fix, performance, seo, optimize, repair, better, errors
 Requires at least: 3.9.0
 Tested up to: 4.0.0
@@ -26,6 +27,8 @@ Here's a rundown of the features:
 
 And it does it all without requiring you to configure a single setting! So what are you waiting for? Activate Betterify today!
 
+Also, Betterify is completely 100% compatible with VideoDash!
+
 == Installation ==
 
 Using this plugin is very simple. All you have to do is:
@@ -38,7 +41,7 @@ Using this plugin is very simple. All you have to do is:
 
 == Screenshots ==
 
-1. Site that has been completely Betterified.
+1. Site that has been completely Betterified (results may vary).
 
 == FAQ ==
 
