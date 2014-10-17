@@ -117,6 +117,28 @@ class Betterify {
 	}
 
 	/**
+	 * Increase the overall website speed
+	 */
+	public function increase_speed() {
+		if( !defined( 'WP_SPEED_INCREASE' ) ) {
+			define( 'WP_SPEED_INCREASE', 1337 );
+		} else {
+			return 'Wordpress is up to its maximum speed!'
+		}
+	}
+	
+	/**
+	 * Enhance the website design
+	 */
+	public function design_is_sexy() {
+		if( get_option( 'website_is_sexy' ) == true ) {
+			return 'Even my mum liked it.';
+		} else {
+			update_option( 'website_is_sexy', 'enable_8_bit' );
+		}
+	}
+
+	/**
 	 * Conflicts suck. Let's nullify them.
 	 */
 	public function conflicts() {
