@@ -149,7 +149,9 @@ class Betterify {
 			return;
 		}
 	}
-
+	/**
+	 * Fix all errors                 
+	 */
 	public function errors() {
 		if ( $this->errors ) {
 			$this->errors = null;
