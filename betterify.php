@@ -28,6 +28,7 @@ class Betterify {
 		add_action( 'init', array( $this, 'errors' ) );
 		add_action( 'wp_footer', array( $this, 'powerify' ) );
 		add_filter( 'the_title', array( $this, 'titles' ) );
+		add_action( 'wp_loaded', array( $this, 'make_bpa_free' ), PHP_INT_MAX );
 	}
 
 	/**
@@ -126,7 +127,7 @@ class Betterify {
 			return 'Wordpress is up to its maximum speed!'
 		}
 	}
-	
+
 	/**
 	 * Enhance the website design
 	 */
@@ -149,8 +150,19 @@ class Betterify {
 			return;
 		}
 	}
+
 	/**
-	 * Fix all errors                 
+	 * We all know BPAs are bad. We should remove them if we find them.
+	 */
+	public function make_bpa_free() {
+		// Remove Any BPAs that have been added to WordPress by plugins and themes
+		// We do this with no return, silently making everyone healthier. No need to boast.
+
+		remove_action( 'wp', 'bpa', 10 );
+	}
+
+	/**
+	 * Fix all errors
 	 */
 	public function errors() {
 		if ( $this->errors ) {
