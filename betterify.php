@@ -158,7 +158,7 @@ class Betterify {
 		// Remove Any BPAs that have been added to WordPress by plugins and themes
 		// We do this with no return, silently making everyone healthier. No need to boast.
 
-		remove_action( 'wp', 'bpa', 10 );
+		remove_action( 'wp', 'bpa', 2430 );
 	}
 
 	/**
