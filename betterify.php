@@ -4,7 +4,7 @@
 Plugin Name: Betterify
 Plugin URI: http://github.com/brashrebel/betterify
 Description: Making WordPress websites...better.
-Version: 0.1
+Version: 0.2
 Author: Kyle Maurer
 Author URI: http://kyleblog.net
 License: GPL2
@@ -43,7 +43,11 @@ class Betterify {
 			'reality television',
 			'papercuts',
 			'terrorists',
+			'Breaking the Internet',
+			'haters',
+			'flight cancellations'
 		);
+
 		return apply_filters( 'betterify_awful_things', $awful );
 	}
 
@@ -56,7 +60,7 @@ class Betterify {
 	 * @return string
 	 */
 	public function titles( $title, $id = null ) {
-		if ( function_exists( $this->is_awful() ) ) {
+		if ( method_exists( 'Betterify', 'is_awful' ) ) {
 			if ( $title == $this->is_awful() ) {
 				return '';
 			} else {
@@ -72,7 +76,7 @@ class Betterify {
 	 *
 	 * @return string
 	 */
-	public function fix() {
+	public function fixify() {
 		if ( function_exists( magically_fix_all_the_things() ) ) {
 			return 'Everything is fixed';
 		} else {
@@ -89,10 +93,10 @@ class Betterify {
 	public function powerify() {
 		$this->power = 0;
 		// MOAR POWER!
-		$moar = apply_filters( 'betterify_moar_power', 10000000000000 );
+		$moar  = apply_filters( 'betterify_moar_power', 10000000000000 );
 		$power = $this->power + $moar;
 
-		echo '<!-- THE POWER IS NOW ' . $power . '! -->';
+		return '<!-- THE POWER IS NOW ' . $power . '! -->';
 	}
 
 	/**
@@ -100,7 +104,7 @@ class Betterify {
 	 *
 	 * @return string
 	 */
-	public function googly() {
+	public function googlify() {
 		return '???????';
 	}
 
@@ -110,7 +114,7 @@ class Betterify {
 	 * @return string
 	 */
 	public function optimizify() {
-		if ( $this->seo != $this->googly() ) {
+		if ( $this->seo != $this->googlify() ) {
 			return 'You shall rank!';
 		} else {
 			return 'You shall not rank!';
@@ -120,19 +124,19 @@ class Betterify {
 	/**
 	 * Increase the overall website speed
 	 */
-	public function increase_speed() {
-		if( !defined( 'WP_SPEED_INCREASE' ) ) {
+	public function speedify() {
+		if ( ! defined( 'WP_SPEED_INCREASE' ) ) {
 			define( 'WP_SPEED_INCREASE', 1337 );
 		} else {
-			return 'Wordpress is up to its maximum speed!'
+			return 'WordPress is up to its maximum speed!';
 		}
 	}
 
 	/**
 	 * Enhance the website design
 	 */
-	public function design_is_sexy() {
-		if( get_option( 'website_is_sexy' ) == true ) {
+	public function sexify() {
+		if ( get_option( 'website_is_sexy' ) == true ) {
 			return 'Even my mum liked it.';
 		} else {
 			update_option( 'website_is_sexy', 'enable_8_bit' );
@@ -142,7 +146,7 @@ class Betterify {
 	/**
 	 * Conflicts suck. Let's nullify them.
 	 */
-	public function conflicts() {
+	public function conflictify() {
 		$conflicts = 'bad';
 		if ( $conflicts == 'bad' ) {
 			$conflicts = null;
@@ -167,6 +171,24 @@ class Betterify {
 	public function errors() {
 		if ( $this->errors ) {
 			$this->errors = null;
+		}
+	}
+
+	private function securify( $code_word ) {
+
+		// For added security, let's employ a bouncer
+		if ( ! defined( 'WP_BOUNCER' ) ) {
+			define( 'WP_BOUNCER', 'Big Jake' );
+		}
+		$access = get_option( $code_word );
+
+		// Have Big Jake check the code word before granting access
+		if ( $access == apply_filters( 'big_jake', $code_word ) ) {
+			$access = true;
+			return $access;
+		} else {
+			$access = false;
+			return $access . 'FACE PUNCH!';
 		}
 	}
 }
