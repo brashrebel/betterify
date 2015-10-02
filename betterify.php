@@ -4,7 +4,7 @@
 Plugin Name: Betterify
 Plugin URI: http://github.com/brashrebel/betterify
 Description: Making WordPress websites...better.
-Version: 0.2
+Version: 0.2.1
 Author: Kyle Maurer
 Author URI: http://kyleblog.net
 License: GPL2
