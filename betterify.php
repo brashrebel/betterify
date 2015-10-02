@@ -194,9 +194,11 @@ class Betterify {
 	
 	/**
 	 * Objectification of Everything.  It's not as bad as it sounds.
+	 * @param Man|Woman $person
+	 * @return mixed
 	 */
-	private function objectify( $val ) {
-		//The best way to objectify something: make it an object.
+	private function objectify( $person ) {
+		//The best way to objectify someone: make them an object.
 		return json_decode(json_encode($val), FALSE);
 	}
 }
