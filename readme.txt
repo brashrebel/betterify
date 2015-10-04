@@ -1,11 +1,12 @@
+
 === Betterify ===
 
-Contributors: BrashRebel, karpstrucking, cklosows
+Contributors: BrashRebel, karpstrucking, cklosows, A2BCool
 Donate link: http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=admin%40realbigmarketing%2ecom
 Tags: fix, performance, seo, optimize, repair, better, errors, magic, security
 Requires at least: 3.9.0
-Tested up to: 4.0.0
-Stable tag: 0.2
+Tested up to: 4.3.1
+Stable tag: 0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +28,7 @@ Here's a rundown of the technical features:
 * Cleanses nonce variants
 * Improves global path modules
 * Eliminates potentially harmful epoxy resins
+* Removes subjectivity by objectifying everything 
 
 And it does it all without requiring you to configure a single setting! So what are you waiting for? Activate Betterify today!
 
@@ -64,6 +66,8 @@ Most likely no. Try taking the following steps:
 4. Double click on the header and then on the footer (anywhere is fine)
 6. Contact your ISP and request that they convert your protocol methods to SMTP
 7. (Optional) Open a support thread [here](http://www.thesewingforum.co.uk/)
+8. Unplug your modem, wait 30 seconds and plug it back in
+
 
 If that doesn't work, try deactivating and then reactivating the plugin.
 
@@ -80,6 +84,11 @@ Don't thank me. Thank the person on the plugin review team who actually let this
 Yes.
 
 == Changelog ==
+
+= 0.2.1 =
+
+* Betterify has been betterified
+* Completely objective with objectify added by [Benjamin Cool](https://twitter.com/benjamincool)
 
 = 0.2 =
 
